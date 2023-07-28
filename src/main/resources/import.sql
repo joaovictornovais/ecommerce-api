@@ -17,4 +17,9 @@ INSERT INTO TB_PRODUCTS (name, description, price, img_url) VALUES ('GTX 1050ti'
 
 INSERT INTO TB_PRODUCTS_CATEGORIES (product_id, category_id) VALUES (1, 2)
 
+INSERT INTO TB_ORDER_ITEM (order_id, product_id, quantity, price) VALUES (1, 1, 1, 39.90)
+INSERT INTO TB_ORDER_ITEM (order_id, product_id, quantity, price) VALUES (2, 1, 1, 99.90)
+INSERT INTO TB_ORDER_ITEM (order_id, product_id, quantity, price) VALUES (3, 1, 2, 79.80)
+
+
 
