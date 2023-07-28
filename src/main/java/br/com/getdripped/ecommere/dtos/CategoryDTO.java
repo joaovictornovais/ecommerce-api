@@ -1,15 +1,21 @@
 package br.com.getdripped.ecommere.dtos;
 
+import java.util.HashSet;
 import java.util.Objects;
+import java.util.Set;
 
 import org.springframework.beans.BeanUtils;
 
 import br.com.getdripped.ecommere.entities.Category;
+import br.com.getdripped.ecommere.entities.Product;
+import jakarta.persistence.Transient;
 
 public class CategoryDTO {
 	
 	private Long id;
 	private String name;
+	
+	private Set<Product> products = new HashSet<>();
 	
 	public CategoryDTO() {}
 
@@ -20,6 +26,10 @@ public class CategoryDTO {
 	
 	public CategoryDTO(Category category) {
 		BeanUtils.copyProperties(category, this);
+	}
+	
+	public Set<Product> getProducts() {
+		return products;
 	}
 
 	public Long getId() {

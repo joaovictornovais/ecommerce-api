@@ -10,3 +10,7 @@ INSERT INTO TB_ORDERS (moment, client_id, order_status) VALUES ('2023-07-27T18:2
 INSERT INTO TB_CATEGORIES (name) VALUES ('Electronics')
 INSERT INTO TB_CATEGORIES (name) VALUES ('Books')
 INSERT INTO TB_CATEGORIES (name) VALUES ('Computers')
+
+INSERT INTO TB_PRODUCTS (name, description, price, img_url) VALUES ('Pai Rico Pai Pobre', 'Livro de dicas financeiras', 39.90, '')
+INSERT INTO TB_PRODUCTS (name, description, price, img_url) VALUES ('Mouse HyperX Pulsefire', 'Mouse gamer 32.000 dpi', 99.90, '')
+INSERT INTO TB_PRODUCTS (name, description, price, img_url) VALUES ('GTX 1050ti', 'Placa de video feita para jogos', 39.90, '')
