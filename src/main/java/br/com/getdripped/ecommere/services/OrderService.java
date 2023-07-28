@@ -4,7 +4,7 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
-import br.com.getdripped.ecommere.dtos.OrderDTO;
+import br.com.getdripped.ecommere.entities.Order;
 import br.com.getdripped.ecommere.repositories.OrderRepository;
 
 @Service
@@ -16,15 +16,14 @@ public class OrderService {
 		this.orderRepository = orderRepository;
 	}
 	
-	public List<OrderDTO> findAll() {
-		var orders = orderRepository.findAll();
-		return orders.stream().map(x -> new OrderDTO(x)).toList();
+	public List<Order> findAll() {
+		return orderRepository.findAll();
 	}
 	
-	public OrderDTO findById(Long id) {
+	public Order findById(Long id) {
 		var order = orderRepository.findById(id);
 		if (order.isEmpty()) return null;
-		else return new OrderDTO(order.get());
+		return order.get();
 	}
 
 }

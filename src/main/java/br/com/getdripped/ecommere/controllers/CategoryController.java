@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.getdripped.ecommere.dtos.CategoryDTO;
+import br.com.getdripped.ecommere.entities.Category;
 import br.com.getdripped.ecommere.services.CategoryService;
 
 @RestController
@@ -23,7 +23,7 @@ public class CategoryController {
 	}
 	
 	@GetMapping
-	public ResponseEntity<List<CategoryDTO>> findAll() {
+	public ResponseEntity<List<Category>> findAll() {
 		return ResponseEntity.status(HttpStatus.OK).body(categoryService.findAll());
 	}
 	

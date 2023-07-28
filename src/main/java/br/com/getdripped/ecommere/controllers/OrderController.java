@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.getdripped.ecommere.dtos.OrderDTO;
+import br.com.getdripped.ecommere.entities.Order;
 import br.com.getdripped.ecommere.services.OrderService;
 
 @RestController
@@ -23,7 +23,7 @@ public class OrderController {
 	}
 	
 	@GetMapping
-	public ResponseEntity<List<OrderDTO>> findAll() {
+	public ResponseEntity<List<Order>> findAll() {
 		return ResponseEntity.status(HttpStatus.OK).body(orderService.findAll());
 	}
 	

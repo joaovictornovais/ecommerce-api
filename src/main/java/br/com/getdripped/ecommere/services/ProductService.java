@@ -4,27 +4,26 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
-import br.com.getdripped.ecommere.dtos.ProductDTO;
+import br.com.getdripped.ecommere.entities.Product;
 import br.com.getdripped.ecommere.repositories.ProductRepository;
 
 @Service
 public class ProductService {
 	
-	private ProductRepository ProductRepository;
+	private ProductRepository productRepository;
 	
-	public ProductService(ProductRepository ProductRepository) {
-		this.ProductRepository = ProductRepository;
+	public ProductService(ProductRepository productRepository) {
+		this.productRepository = productRepository;
 	}
 	
-	public List<ProductDTO> findAll() {
-		var Products = ProductRepository.findAll();
-		return Products.stream().map(x -> new ProductDTO(x)).toList();
+	public List<Product> findAll() {
+		return productRepository.findAll();
 	}
 	
-	public ProductDTO findById(Long id) {
-		var Product = ProductRepository.findById(id);
-		if (Product.isEmpty()) return null;
-		else return new ProductDTO(Product.get());
+	public Product findById(Long id) {
+		var product = productRepository.findById(id);
+		if (product.isEmpty()) return null;
+		else return product.get();
 	}
 
 }
