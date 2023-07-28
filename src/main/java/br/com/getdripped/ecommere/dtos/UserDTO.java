@@ -1,9 +1,14 @@
 package br.com.getdripped.ecommere.dtos;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 import org.springframework.beans.BeanUtils;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
+import br.com.getdripped.ecommere.entities.Order;
 import br.com.getdripped.ecommere.entities.User;
 
 public class UserDTO {
@@ -13,6 +18,9 @@ public class UserDTO {
 	private String email;
 	private String phone;
 	private String password;
+	
+	@JsonIgnore
+	private List<Order> items = new ArrayList<>();
 	
 	public UserDTO() {}
 
@@ -66,6 +74,10 @@ public class UserDTO {
 
 	public void setPassword(String password) {
 		this.password = password;
+	}
+
+	public List<Order> getItems() {
+		return items;
 	}
 
 	@Override
