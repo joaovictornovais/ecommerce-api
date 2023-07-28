@@ -6,3 +6,7 @@ INSERT INTO TB_ORDERS (moment, client_id, order_status) VALUES ('2023-07-27T12:2
 INSERT INTO TB_ORDERS (moment, client_id, order_status) VALUES ('2023-07-27T13:43:21Z', 1, 1)
 INSERT INTO TB_ORDERS (moment, client_id, order_status) VALUES ('2023-07-27T18:53:55Z', 2, 2)
 INSERT INTO TB_ORDERS (moment, client_id, order_status) VALUES ('2023-07-27T18:22:55Z', 3, 4)
+
+INSERT INTO TB_CATEGORIES (name) VALUES ('Electronics')
+INSERT INTO TB_CATEGORIES (name) VALUES ('Books')
+INSERT INTO TB_CATEGORIES (name) VALUES ('Computers')
