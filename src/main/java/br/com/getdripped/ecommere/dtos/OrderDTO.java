@@ -7,22 +7,33 @@ import org.springframework.beans.BeanUtils;
 
 import br.com.getdripped.ecommere.entities.Order;
 import br.com.getdripped.ecommere.entities.User;
+import br.com.getdripped.ecommere.enums.OrderStatus;
 
 public class OrderDTO {
 	
 	private Long id;
 	private Instant moment;
 	private User client;
+	private Integer orderStatus;
 	
 	public OrderDTO() {}
 
-	public OrderDTO(Long id, Instant moment) {
+	public OrderDTO(Long id, Instant moment, OrderStatus orderStatus, User client) {
 		this.id = id;
 		this.moment = moment;
+		this.client = client;
 	}
 	
 	public OrderDTO(Order order) {
 		BeanUtils.copyProperties(order, this);
+	}
+
+	public OrderStatus getOrderStatus() {
+		return OrderStatus.valueOf(orderStatus);
+	}
+
+	public void setOrderStatus(OrderStatus orderStatus) {
+		if (orderStatus != null) this.orderStatus = orderStatus.getCode();
 	}
 
 	public Long getId() {
