@@ -21,4 +21,10 @@ public class UserService {
 		return users.stream().map(x -> new UserDTO(x)).toList();
 	}
 	
+	public UserDTO findById(Long id) {
+		var user = userRepository.findById(id);
+		if (user.isEmpty()) return null;
+		else return new UserDTO(user.get());
+	}
+	
 }
